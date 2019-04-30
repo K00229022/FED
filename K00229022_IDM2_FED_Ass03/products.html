@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale">
+        <title>Product App</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+    
+        <div class="header">
+            <h1>WearKicks</h1>
+            <div class="nav-bar">
+                <nav>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="products.html">Products</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+
+                </nav>
+            </div>
+        </div>
+        
+        <div id="app">
+            
+            <div class="cart">
+                <p>Cart({{cart}})</p>
+            </div>
+            
+            
+            
+            
+            
+            
+            
+            
+            <!-- Product One -->
+            
+            
+            <div class="productOne">
+            
+                <div class="productOne-image">
+                    <img v-bind:src="imageOne" >
+                </div>
+
+                <div class="productOne-info">
+                    <h1>{{ productOne }}</h1>
+                    <p v-if="inventoryOne > 10">In Stock</p>
+                    <p v-else-if="inventoryOne <= 10 && inventoryOne > 0">Almost sold out!</p>
+                    <p v-else>Out of Stock</p>
+                    
+                    <ul>
+                        <li v-for="detail in detailsOne">{{ detail }}</li>
+                    </ul>
+                    
+                    <div v-for="variant in variantsOne" :key="variant.variantId">
+                        <p @mouseover="updateProduct(variant.variantImage)">{{ variant.variantColor }}</p>
+                    </div>
+                    
+                    <button v-on:click="addToCart">Add to Cart</button>
+                    
+                </div>
+                
+            </div>
+            
+            
+            
+            
+            
+            
+            
+            
+            <!-- Product Two -->
+            
+            
+            <div class="productTwo">
+                
+                <div class="productTwo-image">
+                    <img v-bind:src="imageTwo">
+                </div>
+                
+                <div class="productTwo-info">
+                    <h1>{{ productTwo }}</h1>
+                    <p v-if="inventoryTwo > 10">In Stock</p>
+                    <p v-else-if="inventoryTwo <= 10 && inventoryTwo > 0">Almost Sold Out</p>
+                    <p v-else>Out of Stock</p>
+                    
+                    <ul>
+                        <li v-for="detail in detailsTwo">{{ detail }}</li>
+                    </ul>
+                    
+                    <div v-for="variant in variantsTwo" :key="variant.variantId">
+                        <p>{{ variant.variantColor }}</p>
+                    </div>
+                    
+                    <button v-on:click="addToCart">Add to Cart</button>
+                    
+                </div>
+                
+            </div>
+            
+            
+            
+            
+            
+            
+            
+            
+            <!-- Product Three -->
+            
+            
+            <div class="productThree">
+            
+                <div class="productThree-image">
+                    <img v-bind:src="imageThree">
+                </div>
+                
+                <div class="productThree-info">
+                    <h1>{{ productThree }}</h1>
+                    <p v-if="inventoryThree > 10">In Stock</p>
+                    <p v-else-if="inventoryThree <= 10 && inventoryThree > 0">Almost Sold Out</p>
+                    <p v-else>Out of Stock</p>
+                    
+                    <ul>
+                        <li v-for="detail in detailsThree">{{ detail }}</li>
+                    </ul>
+                    
+                    <div v-for="variant in variantsThree" :key="variant.variantId">
+                        <p>{{ variant.variantColor }}</p>
+                    </div>
+                    
+                    <button v-on:click="addToCart">Add to Cart</button>
+                    
+                </div>
+                
+            </div>
+            
+            
+            
+            
+            
+            
+            
+            
+            <!-- Product Four -->
+            
+            
+            <div class="productFour">
+            
+                <div class="productFour-image">
+                    <img v-bind:src="imageFour">
+                </div>
+                
+                <div class="productFour-info">
+                    <h1>{{ productFour }}</h1>
+                    <p v-if="inventoryFour > 10">In Stock</p>
+                    <p v-else-if="inventoryFour <= 10 && inventoryFour > 0">Almost Sold Out</p>
+                    <p v-else>Out of Stock</p>
+                    
+                    <ul>
+                        <li v-for="detail in detailsFour">{{ detail }}</li>
+                    </ul>
+                    
+                    <div v-for="variant in variantsFour" :key="variant.variantId">
+                        <p>{{ variant.variantColor }}</p>
+                    </div>
+                    
+                    <button v-on:click="addToCart">Add to Cart</button>
+                    
+                </div>
+                
+            </div>
+            
+            
+            
+            
+            
+            
+            
+            
+            <!-- Product Five -->
+            
+            
+            <div class="productFive">
+            
+                <div class="productFive-image">
+                    <img v-bind:src="imageFive">
+                </div>
+                
+                <div class="productFive-info">
+                    <h1>{{ productFive }}</h1>
+                    <p v-if="inventoryFive > 10">In Stock</p>
+                    <p v-else-if="inventoryFive <= 10 && inventoryFive > 0">Almost Sold Out</p>
+                    <p v-else>Out of Stock</p>
+                    
+                    <ul>
+                        <li v-for="detail in detailsFive">{{ detail }}</li>
+                    </ul>
+                    
+                    <div v-for="variant in variantsFive" :key="variant.variantId">
+                        <p>{{ variant.variantColor }}</p>
+                    </div>
+                    
+                    <button v-on:click="addToCart">Add to Cart</button>
+                    
+                </div>
+                
+            </div>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <div class="productSix">
+            
+                <div class="productSix-image">
+                    <img v-bind:src="imageSix">
+                </div>
+                
+                <div class="productSix-info">
+                    <h1>{{ productSix }}</h1>
+                    <p v-if="inventorySix > 10">In Stock</p>
+                    <p v-else-if="inventorySix <= 10 && inventorySix > 0">Almost Sold Out</p>
+                    <p v-else>Out of Stock</p>
+                    
+                    <ul>
+                        <li v-for="detail in detailsSix">{{ detail }}</li>
+                    </ul>
+                    
+                    <div v-for="variant in variantsSix" :key="variant.variantId">
+                        <p>{{ variant.variantColor }}</p>
+                    </div>
+                    
+                    <button v-on:click="addToCart">Add to Cart</button>
+                    
+                </div>
+                
+            </div>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <div class="productSeven">
+            
+                <div class="productSeven-image">
+                    <img v-bind:src="imageSeven">
+                </div>
+                
+                <div class="productSeven-info">
+                    <h1>{{ productSeven }}</h1>
+                    <p v-if="inventorySeven > 10">In Stock</p>
+                    <p v-else-if="inventorySeven <= 10 && inventorySeven > 0">Almost Sold Out</p>
+                    <p v-else>Out of Stock</p>
+                    
+                    <ul>
+                        <li v-for="detail in detailsSeven">{{ detail }}</li>
+                    </ul>
+                    
+                    <div v-for="variant in variantsSeven" :key="variant.variantId">
+                        <p>{{ variant.variantColor }}</p>
+                    </div>
+                    
+                    <button v-on:click="addToCart">Add to Cart</button>
+                    
+                </div>
+                
+            </div>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <div class="productEight">
+            
+                <div class="productEight-image">
+                    <img v-bind:src="imageEight">
+                </div>
+                
+                <div class="productEight-info">
+                    <h1>{{ productEight }}</h1>
+                    <p v-if="inventoryEight > 10">In Stock</p>
+                    <p v-else-if="inventoryEight <= 10 && inventoryEight > 0">Almost Sold Out</p>
+                    <p v-else>Out of Stock</p>
+                    
+                    <ul>
+                        <li v-for="detail in detailsEight">{{ detail }}</li>
+                    </ul>
+                    
+                    <div v-for="variant in variantsEight" :key="variant.variantId">
+                        <p>{{ variant.variantColor }}</p>
+                    </div>
+                    
+                    <button v-on:click="addToCart">Add to Cart</button>
+                    
+                </div>
+                
+            </div>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <div class="productNine">
+            
+                <div class="productNine-image">
+                    <img v-bind:src="imageNine">
+                </div>
+                
+                <div class="productNine-info">
+                    <h1>{{ productNine }}</h1>
+                    <p v-if="inventoryNine > 10">In Stock</p>
+                    <p v-else-if="inventoryNine <= 10 && inventoryNine > 0">Almost Sold Out</p>
+                    <p v-else>Out of Stock</p>
+                    
+                    <ul>
+                        <li v-for="detail in detailsNine">{{ detail }}</li>
+                    </ul>
+                    
+                    <div v-for="variant in variantsNine" :key="variant.variantId">
+                        <p>{{ variant.variantColor }}</p>
+                    </div>
+                    
+                    <button v-on:click="addToCart">Add to Cart</button>
+                    
+                </div>
+                
+            </div>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        <div class="productTen">
+            
+                <div class="productTen-image">
+                    <img v-bind:src="imageTen">
+                </div>
+                
+                <div class="productTen-info">
+                    <h1>{{ productTen }}</h1>
+                    <p v-if="inventoryTen > 10">In Stock</p>
+                    <p v-else-if="inventoryTen <= 10 && inventoryTen > 0">Almost Sold Out</p>
+                    <p v-else>Out of Stock</p>
+                    
+                    <ul>
+                        <li v-for="detail in detailsTen">{{ detail }}</li>
+                    </ul>
+                    
+                    <div v-for="variant in variantsTen" :key="variant.variantId">
+                        <p>{{ variant.variantColor }}</p>
+                    </div>
+                    
+                    <button v-on:click="addToCart">Add to Cart</button>
+                    
+                </div>
+                
+            </div>    
+            
+            
+        </div>
+        
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <script src="main.js"></script>
+    </body>
+</html>
